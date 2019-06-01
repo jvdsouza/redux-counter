@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addCounter } from '../../actions/index';
-import { bindActionCreators } from 'redux';
+// import { bindActionCreators } from 'redux';  
 
 class AddCounter extends Component {
     // constructor() {
@@ -40,7 +40,8 @@ const mapDispatchToProps = (dispatch) => {
     return (
         //need to bind the actions within the component and 
         //pass dispatch as a property to our component
-        {actions: bindActionCreators(addCounter, dispatch)}
+        // {actions: bindActionCreators(addCounter, dispatch)}
+        {addCounter: () => dispatch(addCounter())}
     );
 }
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { removeCounter } from '../../actions/index';
-import { bindActionCreators } from 'redux';
+// import { bindActionCreators } from 'redux';
 
 class RemoveCounter extends Component {
     // constructor() {
@@ -42,7 +42,8 @@ const mapDispatchToProps = (dispatch) => {
         //need to bind the actions within the component and 
         //pass dispatch as a property to our component
         //bind the action, not the component
-        {actions: bindActionCreators(removeCounter, dispatch)}
+        // {actions: bindActionCreators(removeCounter, dispatch)}
+        {removeCounter: () => dispatch(removeCounter())}
     );
 }
 
